@@ -1,0 +1,52 @@
+
+<html>
+<head>
+<title> Language App </title>
+<style>
+*{font-size: 50px;}
+body{background-color: #ffffcc;}
+h1 , h2 {background-color: black; color: white; width: 50%; border-radius: 50px;}
+input[type= "radio"] {width:1.5%; height:0.5em;}
+</style>
+<script>
+function find(){
+event.preventDefault();
+let name = document.getElementById("name");
+let js = document.getElementById("js");
+let ja = document.getElementById("ja");
+let py = document.getElementById("py");
+let msg = document.getElementById("msg");
+if(name.value == ""){
+alert("You did not enter your name");
+msg.innerHTML = "";
+name.focus();
+return;
+}
+let languages = "";
+if(js.checked)		languages += " JavaScript ";
+if(ja.checked)		languages += " Java ";
+if(py.checked) 		languages += " Python ";
+
+let ans = "Name: " + name.value + " languages: " + languages;
+msg.innerHTML = ans;
+
+}
+</script>
+</head>
+
+<body>
+<center>
+<h1> Languagae App </h1>
+<form onsubmit = "find()">
+<input type="text" placeholder="Enter Name" id="name" />
+<br><br>
+<input type="checkbox"  id="js" /> JavaScript
+<input type="checkbox"  id="ja" /> Java
+<input type="checkbox" id="py" /> Python
+<br><br>
+<input type="submit" />
+</form>
+<h2 id="msg"/>
+</center>
+</body>
+</html>
